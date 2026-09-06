@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EventSphere | Feedback</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <nav>
+
+        <div class="logo">
+            EventSphere
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+            <a
+                href="feedback.html"
+                class="active"
+            >
+                Feedback
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main>
+
+        <section class="feedback-section">
+
+
+            <!-- =================================
+                 HEADER
+            ================================== -->
+
+            <div class="feedback-header">
+
+                <p class="subtitle">
+                    SHARE YOUR EXPERIENCE
+                </p>
+
+
+                <h1>
+                    Event Feedback
+                </h1>
+
+
+                <p>
+                    Tell us about your experience.
+                    Your feedback helps us improve
+                    our future events.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 FEEDBACK FORM
+            ================================== -->
+
+            <div class="feedback-form">
+
+                <form id="feedbackForm">
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- EVENT -->
+
+                    <div class="form-group">
+
+                        <label for="event">
+                            Select Event
+                        </label>
+
+
+                        <select
+                            id="event"
+                            name="event"
+                            required
+                        >
+
+                            <option value="">
+                                -- Select an Event --
+                            </option>
+
+                            <option value="Code Sprint">
+                                Code Sprint
+                            </option>
+
+                            <option value="Debugging Challenge">
+                                Debugging Challenge
+                            </option>
+
+                            <option value="Web Design Challenge">
+                                Web Design Challenge
+                            </option>
+
+                            <option value="AI Idea Pitch">
+                                AI Idea Pitch
+                            </option>
+
+                            <option value="Tech Quiz">
+                                Tech Quiz
+                            </option>
+
+                            <option value="Reverse Coding">
+                                Reverse Coding
+                            </option>
+
+                            <option value="UI/UX Challenge">
+                                UI/UX Challenge
+                            </option>
+
+                            <option value="Hackathon">
+                                Hackathon
+                            </option>
+
+                            <option value="Technical Workshop">
+                                Technical Workshop
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Feedback
+                        </label>
+
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us about your event experience..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                        id="submitBtn"
+                    >
+                        Submit Feedback
+                    </button>
+
+
+                    <!-- RESPONSE -->
+
+                    <div
+                        id="responseMessage"
+                    ></div>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =================================
+                 RECENT FEEDBACK
+            ================================== -->
+
+            <div class="recent-feedback">
+
+                <h2>
+                    Recent Feedback
+                </h2>
+
+
+                <div
+                    id="feedbackList"
+                    class="feedback-list"
+                >
+
+                    <p
+                        style="
+                            text-align:center;
+                            color:#aaa2b8;
+                        "
+                    >
+                        Loading feedback...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        
+        
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+
+        /* =================================
+           GET HTML ELEMENTS
+        ================================== */
+
+        const form =
+            document.getElementById("feedbackForm");
+
+
+        const responseMessage =
+            document.getElementById("responseMessage");
+
+
+        const feedbackList =
+            document.getElementById("feedbackList");
+
+
+        const submitBtn =
+            document.getElementById("submitBtn");
+
+
+
+        /* =================================
+           LOAD FEEDBACK
+        ================================== */
+
+        async function loadFeedback() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        "http://localhost:5000/api/feedback"
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Failed to load feedback"
+                    );
+
+                }
+
+
+                const feedback =
+                    await response.json();
+
+
+
+                /* NO FEEDBACK */
+
+                if (feedback.length === 0) {
+
+                    feedbackList.innerHTML = `
+
+                        <p
+                            style="
+                                text-align:center;
+                                color:#aaa2b8;
+                            "
+                        >
+                            No feedback submitted yet.
+                        </p>
+
+                    `;
+
+                    return;
+
+                }
+
+
+
+                /* DISPLAY FEEDBACK */
+
+                feedbackList.innerHTML =
+
+                    feedback.map(item => `
+
+                        <div class="feedback-item">
+
+                            <h3>
+                                ${escapeHTML(item.name)}
+                            </h3>
+
+
+                            <p>
+
+                                <strong>
+                                    Event:
+                                </strong>
+
+                                ${escapeHTML(item.event)}
+
+                            </p>
+
+
+                            <p>
+                                ${escapeHTML(item.message)}
+                            </p>
+
+                        </div>
+
+                    `).join("");
+
+
+            }
+
+
+            catch (error) {
+
+                feedbackList.innerHTML = `
+
+                    <p
+                        style="
+                            text-align:center;
+                            color:#ef4444;
+                        "
+                    >
+                        Unable to load feedback.
+                    </p>
+
+                `;
+
+
+                console.error(error);
+
+            }
+
+        }
+
+
+
+        /* =================================
+           SUBMIT FEEDBACK
+        ================================== */
+
+        form.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+
+                /* GET VALUES */
+
+                const name =
+                    document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+
+                const email =
+                    document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+
+                const selectedEvent =
+                    document
+                    .getElementById("event")
+                    .value;
+
+
+                const message =
+                    document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
+
+
+                /* VALIDATION */
+
+                if (
+                    !name ||
+                    !email ||
+                    !selectedEvent ||
+                    !message
+                ) {
+
+                    responseMessage.textContent =
+                        "Please fill in all fields.";
+
+                    responseMessage.style.color =
+                        "#ef4444";
+
+                    return;
+
+                }
+
+
+
+                /* BUTTON LOADING */
+
+                submitBtn.disabled = true;
+
+                submitBtn.textContent =
+                    "Submitting...";
+
+                responseMessage.textContent = "";
+
+
+
+                try {
+
+
+                    /* SEND TO BACKEND */
+
+                    const response =
+                        await fetch(
+                            "http://localhost:5000/api/feedback",
+                            {
+
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body: JSON.stringify({
+
+                                    name: name,
+
+                                    email: email,
+
+                                    event: selectedEvent,
+
+                                    message: message
+
+                                })
+
+                            }
+                        );
+
+
+
+                    const data =
+                        await response.json();
+
+
+
+                    /* ERROR */
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            data.message ||
+                            "Failed to submit feedback"
+                        );
+
+                    }
+
+
+
+                    /* SUCCESS */
+
+                    responseMessage.textContent =
+                        "✓ Feedback submitted successfully!";
+
+                    responseMessage.style.color =
+                        "#c45cff";
+
+
+
+                    /* CLEAR FORM */
+
+                    form.reset();
+
+
+
+                    /* REFRESH FEEDBACK */
+
+                    loadFeedback();
+
+
+                }
+
+
+                catch (error) {
+
+                    responseMessage.textContent =
+                        "✕ Unable to submit feedback. Please try again.";
+
+                    responseMessage.style.color =
+                        "#ef4444";
+
+
+                    console.error(error);
+
+                }
+
+
+                finally {
+
+                    submitBtn.disabled = false;
+
+                    submitBtn.textContent =
+                        "Submit Feedback";
+
+                }
+
+            }
+        );
+
+
+
+        /* =================================
+           SECURITY
+        ================================== */
+
+        function escapeHTML(value) {
+
+            return String(value)
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+
+        /* =================================
+           LOAD DATA WHEN PAGE OPENS
+        ================================== */
+
+        loadFeedback();
+
+
+    </script>
+
+
+</body>
+
+</html>

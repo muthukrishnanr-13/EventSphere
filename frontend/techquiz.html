@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EventSphere | Tech Quiz</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .details-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        .details-hero {
+            text-align: center;
+            padding: 70px 30px;
+            margin-bottom: 45px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #24104f, #4b1d75);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .details-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .details-label {
+            color: #c9a7ff;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .details-hero h1 {
+            font-size: 58px;
+            margin: 0 0 20px;
+            color: white;
+        }
+
+        .details-hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #ddd0f5;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .details-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+        }
+
+        .details-section h2 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 28px;
+        }
+
+        .details-section p {
+            color: #d8d1e5;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .details-section ul {
+            color: #d8d1e5;
+            line-height: 2;
+            padding-left: 25px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .info-box strong {
+            display: block;
+            color: #c9a7ff;
+            margin-bottom: 8px;
+        }
+
+        .info-box span {
+            color: white;
+        }
+
+        .details-cta {
+            text-align: center;
+            padding: 35px 0 10px;
+        }
+
+        .details-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #8b5cf6;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        .details-btn:hover {
+            transform: translateY(-3px);
+            background: #7c3aed;
+        }
+
+        .events-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #8b5cf6;
+            padding: 15px 28px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        .events-btn:hover {
+            background: rgba(139, 92, 246, 0.15);
+        }
+
+        @media (max-width: 700px) {
+            .details-page {
+                padding: 50px 18px;
+            }
+
+            .details-hero h1 {
+                font-size: 40px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .details-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">EventSphere</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main class="details-page">
+
+        <!-- HERO -->
+        <section class="details-hero">
+
+            <div class="details-icon">🧠</div>
+
+            <div class="details-label">
+                KNOWLEDGE EVENT
+            </div>
+
+            <h1>Tech Quiz</h1>
+
+            <p>
+                Test your technical knowledge, challenge your thinking,
+                and compete with other participants through an exciting
+                technology-based quiz.
+            </p>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section class="details-section">
+
+            <h2>About the Event</h2>
+
+            <p>
+                Tech Quiz is an engaging technical competition designed
+                to test participants' knowledge of programming, web
+                development, databases, cloud computing, artificial
+                intelligence, and emerging technologies.
+            </p>
+
+        </section>
+
+        <!-- OBJECTIVE -->
+        <section class="details-section">
+
+            <h2>Objective</h2>
+
+            <p>
+                The objective of the event is to improve technical
+                awareness, encourage continuous learning, and provide
+                participants with an opportunity to test their knowledge
+                in a competitive environment.
+            </p>
+
+        </section>
+
+        <!-- EVENT INFORMATION -->
+        <section class="details-section">
+
+            <h2>Event Information</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>👥 Participation</strong>
+                    <span>Individual / Team</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>⏱ Duration</strong>
+                    <span>30–45 Minutes</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>📍 Mode</strong>
+                    <span>On-site / Online</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>🎯 Level</strong>
+                    <span>Beginner to Advanced</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- QUIZ FORMAT -->
+        <section class="details-section">
+
+            <h2>Quiz Format</h2>
+
+            <ul>
+                <li>Multiple-choice technical questions.</li>
+                <li>Questions covering different technology domains.</li>
+                <li>Programming and computer science fundamentals.</li>
+                <li>Web, database, cloud, and AI-related questions.</li>
+                <li>Time-based rounds may be included.</li>
+                <li>Highest-scoring participants will qualify for the final round.</li>
+            </ul>
+
+        </section>
+
+        <!-- TOPICS -->
+        <section class="details-section">
+
+            <h2>Topics Covered</h2>
+
+            <ul>
+                <li>Programming and Data Structures</li>
+                <li>Web Development</li>
+                <li>Database Management</li>
+                <li>Cloud Computing</li>
+                <li>Artificial Intelligence</li>
+                <li>Cyber Security</li>
+                <li>Computer Fundamentals</li>
+                <li>Emerging Technologies</li>
+            </ul>
+
+        </section>
+
+        <!-- JUDGING -->
+        <section class="details-section">
+
+            <h2>Judging Criteria</h2>
+
+            <ul>
+                <li>Number of correct answers</li>
+                <li>Accuracy</li>
+                <li>Time taken to answer</li>
+                <li>Final round performance</li>
+            </ul>
+
+        </section>
+
+        <!-- RULES -->
+        <section class="details-section">
+
+            <h2>Rules & Guidelines</h2>
+
+            <ul>
+                <li>Participants must follow the given time limit.</li>
+                <li>Each question should be answered within the allotted time.</li>
+                <li>Use of unauthorized external assistance is not allowed.</li>
+                <li>Participants must follow the instructions of the organizers.</li>
+                <li>Organizer decisions will be final.</li>
+            </ul>
+
+        </section>
+
+        <!-- LEARNING -->
+        <section class="details-section">
+
+            <h2>What You Will Learn</h2>
+
+            <ul>
+                <li>Improved technical knowledge</li>
+                <li>Better understanding of computer science concepts</li>
+                <li>Awareness of emerging technologies</li>
+                <li>Faster analytical thinking</li>
+                <li>Competitive problem-solving skills</li>
+            </ul>
+
+        </section>
+
+        <!-- RECOGNITION -->
+        <section class="details-section">
+
+            <h2>Prizes & Recognition</h2>
+
+            <p>
+                Top-performing participants will receive recognition
+                and certificates. Winners may also receive exciting
+                prizes based on the final event evaluation.
+            </p>
+
+        </section>
+
+        <!-- CTA -->
+        <div class="details-cta">
+
+            <a
+                href="feedback.html"
+                class="details-btn"
+            >
+                Give Tech Quiz Feedback →
+            </a>
+
+            <a
+                href="events.html"
+                class="events-btn"
+            >
+                ← Back to Events
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

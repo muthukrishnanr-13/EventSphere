@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EventSphere | Reverse Coding</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .details-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        .details-hero {
+            text-align: center;
+            padding: 70px 30px;
+            margin-bottom: 45px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #24104f, #4b1d75);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .details-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .details-label {
+            color: #c9a7ff;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .details-hero h1 {
+            font-size: 58px;
+            margin: 0 0 20px;
+            color: white;
+        }
+
+        .details-hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #ddd0f5;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .details-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+        }
+
+        .details-section h2 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 28px;
+        }
+
+        .details-section p {
+            color: #d8d1e5;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .details-section ul {
+            color: #d8d1e5;
+            line-height: 2;
+            padding-left: 25px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .info-box strong {
+            display: block;
+            color: #c9a7ff;
+            margin-bottom: 8px;
+        }
+
+        .info-box span {
+            color: white;
+        }
+
+        .details-cta {
+            text-align: center;
+            padding: 35px 0 10px;
+        }
+
+        .details-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #8b5cf6;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        .details-btn:hover {
+            transform: translateY(-3px);
+            background: #7c3aed;
+        }
+
+        .events-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #8b5cf6;
+            padding: 15px 28px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        .events-btn:hover {
+            background: rgba(139, 92, 246, 0.15);
+        }
+
+        @media (max-width: 700px) {
+            .details-page {
+                padding: 50px 18px;
+            }
+
+            .details-hero h1 {
+                font-size: 40px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .details-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">EventSphere</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main class="details-page">
+
+        <!-- HERO -->
+        <section class="details-hero">
+
+            <div class="details-icon">🔄</div>
+
+            <div class="details-label">
+                PROGRAMMING EVENT
+            </div>
+
+            <h1>Reverse Coding</h1>
+
+            <p>
+                Analyze the given output, understand the hidden logic,
+                and create the correct program to reproduce the expected
+                result.
+            </p>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section class="details-section">
+
+            <h2>About the Event</h2>
+
+            <p>
+                Reverse Coding is a challenging programming event where
+                participants are given outputs, program behavior, or
+                problem clues and must determine the logic required to
+                produce the correct result.
+            </p>
+
+        </section>
+
+        <!-- OBJECTIVE -->
+        <section class="details-section">
+
+            <h2>Objective</h2>
+
+            <p>
+                The objective is to develop logical thinking, programming
+                skills, analytical reasoning, and the ability to understand
+                problems from the expected output backwards.
+            </p>
+
+        </section>
+
+        <!-- EVENT INFORMATION -->
+        <section class="details-section">
+
+            <h2>Event Information</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>👥 Participation</strong>
+                    <span>Individual / Team</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>⏱ Duration</strong>
+                    <span>60 Minutes</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>📍 Mode</strong>
+                    <span>On-site / Online</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>🎯 Level</strong>
+                    <span>Intermediate to Advanced</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CHALLENGE FORMAT -->
+        <section class="details-section">
+
+            <h2>Challenge Format</h2>
+
+            <ul>
+                <li>Participants will receive expected outputs or problem clues.</li>
+                <li>Analyze the output carefully.</li>
+                <li>Identify the logic behind the expected result.</li>
+                <li>Write a program that produces the required output.</li>
+                <li>Test and improve the solution.</li>
+                <li>Complete as many challenges as possible within the time limit.</li>
+            </ul>
+
+        </section>
+
+        <!-- SKILLS -->
+        <section class="details-section">
+
+            <h2>Skills Required</h2>
+
+            <ul>
+                <li>Logical thinking</li>
+                <li>Programming fundamentals</li>
+                <li>Problem-solving</li>
+                <li>Algorithmic thinking</li>
+                <li>Code analysis</li>
+                <li>Debugging skills</li>
+            </ul>
+
+        </section>
+
+        <!-- TECHNOLOGIES -->
+        <section class="details-section">
+
+            <h2>Technologies</h2>
+
+            <ul>
+                <li>C / C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+            </ul>
+
+        </section>
+
+        <!-- JUDGING -->
+        <section class="details-section">
+
+            <h2>Judging Criteria</h2>
+
+            <ul>
+                <li>Correctness of the output</li>
+                <li>Number of challenges solved</li>
+                <li>Time taken</li>
+                <li>Code efficiency</li>
+                <li>Logical approach</li>
+            </ul>
+
+        </section>
+
+        <!-- RULES -->
+        <section class="details-section">
+
+            <h2>Rules & Guidelines</h2>
+
+            <ul>
+                <li>Participants must complete the challenges within the given time.</li>
+                <li>Solutions must produce the expected output.</li>
+                <li>Unauthorized external assistance is not allowed.</li>
+                <li>Participants must follow the event instructions.</li>
+                <li>Organizer decisions will be final.</li>
+            </ul>
+
+        </section>
+
+        <!-- LEARNING -->
+        <section class="details-section">
+
+            <h2>What You Will Learn</h2>
+
+            <ul>
+                <li>Advanced logical reasoning</li>
+                <li>Better understanding of program behavior</li>
+                <li>Problem-solving techniques</li>
+                <li>Algorithm development</li>
+                <li>Programming confidence</li>
+            </ul>
+
+        </section>
+
+        <!-- PRIZES -->
+        <section class="details-section">
+
+            <h2>Prizes & Recognition</h2>
+
+            <p>
+                Top-performing participants will receive recognition
+                and certificates. Winners may also receive exciting
+                prizes based on the final evaluation.
+            </p>
+
+        </section>
+
+        <!-- CTA -->
+        <div class="details-cta">
+
+            <a
+                href="feedback.html"
+                class="details-btn"
+            >
+                Give Reverse Coding Feedback →
+            </a>
+
+            <a
+                href="events.html"
+                class="events-btn"
+            >
+                ← Back to Events
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

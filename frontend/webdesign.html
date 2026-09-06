@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Challenge | EventSphere</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .details-page {
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .details-hero {
+            padding: 90px 20px 70px;
+            text-align: center;
+            background: linear-gradient(135deg, #160d2b, #2b1457);
+        }
+
+        .details-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .details-label {
+            color: #b98cff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .details-hero h1 {
+            font-size: 52px;
+            margin: 12px 0;
+        }
+
+        .details-hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #d8cfee;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #c9a7ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .details-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .details-section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .details-section h2 {
+            color: #c9a7ff;
+            margin-bottom: 15px;
+        }
+
+        .details-section p,
+        .details-section li {
+            color: #d9d4e7;
+            line-height: 1.8;
+        }
+
+        .details-section ul {
+            padding-left: 22px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.04);
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .info-box strong {
+            display: block;
+            color: #c9a7ff;
+            margin-bottom: 5px;
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #241044, #35146b);
+            border-radius: 20px;
+        }
+
+        .event-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 25px;
+            border-radius: 10px;
+            background: #8b5cf6;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .event-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 700px) {
+            .details-hero h1 {
+                font-size: 38px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">EventSphere</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="feedback.html">Feedback</a>
+    </div>
+</nav>
+
+<main class="details-page">
+
+    <section class="details-hero">
+
+        <div class="details-icon">🌐</div>
+
+        <div class="details-label">DESIGN & DEVELOPMENT EVENT</div>
+
+        <h1>Web Design Challenge</h1>
+
+        <p>
+            Design and build attractive, responsive, and user-friendly
+            websites by combining creativity, modern design principles,
+            and web development skills.
+        </p>
+
+        <a href="events.html" class="back-link">← Back to Events</a>
+
+    </section>
+
+    <div class="details-container">
+
+        <section class="details-section">
+            <h2>About the Event</h2>
+
+            <p>
+                The Web Design Challenge gives participants an opportunity
+                to create a modern website based on a given theme or
+                problem statement. Participants will focus on visual
+                design, usability, responsiveness, and functionality.
+            </p>
+        </section>
+
+        <section class="details-section">
+            <h2>Objective</h2>
+
+            <p>
+                The objective is to encourage participants to develop
+                creative web solutions while demonstrating their knowledge
+                of HTML, CSS, JavaScript, responsive design, and user
+                experience principles.
+            </p>
+        </section>
+
+        <section class="details-section">
+            <h2>Event Information</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>👥 Participants</strong>
+                    Individual or Team
+                </div>
+
+                <div class="info-box">
+                    <strong>⏱ Duration</strong>
+                    2–3 Hours
+                </div>
+
+                <div class="info-box">
+                    <strong>📍 Mode</strong>
+                    On-site
+                </div>
+
+                <div class="info-box">
+                    <strong>🎯 Level</strong>
+                    Beginner to Advanced
+                </div>
+
+            </div>
+        </section>
+
+        <section class="details-section">
+            <h2>Challenge Format</h2>
+
+            <ul>
+                <li>A website theme or problem statement will be provided.</li>
+                <li>Participants plan the website structure and layout.</li>
+                <li>Create responsive web pages.</li>
+                <li>Implement the required features.</li>
+                <li>Present the completed website to the judges.</li>
+            </ul>
+        </section>
+
+        <section class="details-section">
+            <h2>Technologies</h2>
+
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Bootstrap</li>
+                <li>Responsive Web Design</li>
+                <li>Git and GitHub</li>
+            </ul>
+        </section>
+
+        <section class="details-section">
+            <h2>Judging Criteria</h2>
+
+            <ul>
+                <li>Creativity and originality</li>
+                <li>Visual design and layout</li>
+                <li>User experience</li>
+                <li>Responsiveness</li>
+                <li>Functionality</li>
+                <li>Code quality</li>
+                <li>Presentation</li>
+            </ul>
+        </section>
+
+        <section class="details-section">
+            <h2>Rules & Guidelines</h2>
+
+            <ul>
+                <li>Participants must follow the given theme.</li>
+                <li>Designs should be original.</li>
+                <li>Website must be responsive.</li>
+                <li>All work must be completed within the given time.</li>
+                <li>Participants must present their final website.</li>
+            </ul>
+        </section>
+
+        <section class="details-section">
+            <h2>What You Will Learn</h2>
+
+            <ul>
+                <li>Modern website design principles</li>
+                <li>Responsive web development</li>
+                <li>UI and UX fundamentals</li>
+                <li>Frontend development techniques</li>
+                <li>Creative problem solving</li>
+                <li>Website presentation skills</li>
+            </ul>
+        </section>
+
+        <section class="details-section">
+            <h2>Prizes & Recognition</h2>
+
+            <p>
+                The best designs will receive prizes, certificates,
+                recognition, and an opportunity to showcase their
+                creative work.
+            </p>
+        </section>
+
+        <section class="cta-box">
+
+            <h2>Ready to Share Your Experience?</h2>
+
+            <p>
+                After participating in the Web Design Challenge,
+                share your valuable feedback with us.
+            </p>
+
+            <a href="feedback.html" class="event-btn">
+                Give Event Feedback →
+            </a>
+
+            <br>
+
+            <a href="events.html" class="back-link">
+                ← Back to All Events
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+</body>
+</html>

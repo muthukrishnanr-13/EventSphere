@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EventSphere | Code Sprint</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        /* =====================================
+           DETAILS PAGE
+        ===================================== */
+
+        .details-page {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 90px 30px;
+
+        }
+
+
+        /* =====================================
+           BACK BUTTON
+        ===================================== */
+
+        .back-link {
+
+            display: inline-block;
+
+            color: #c45cff;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .back-link:hover {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .details-hero {
+
+            position: relative;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            padding: 75px 40px;
+
+            border-radius: 24px;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(196, 92, 255, 0.22),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #241438,
+                    #10091c
+                );
+
+            border: 1px solid rgba(
+                196,
+                92,
+                255,
+                0.35
+            );
+
+            box-shadow:
+                0 0 40px
+                rgba(196, 92, 255, 0.08);
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .details-icon {
+
+            font-size: 75px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .event-label {
+
+            color: #c9bddb;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            letter-spacing: 6px;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .details-hero h1 {
+
+            margin: 0;
+
+            font-size: 64px;
+
+            font-weight: 500;
+
+            color: #c45cff;
+
+            text-shadow:
+                0 0 20px
+                rgba(196, 92, 255, 0.25);
+
+        }
+
+
+        .details-hero p {
+
+            max-width: 850px;
+
+            margin: 35px auto 0;
+
+            color: #c9bddb;
+
+            font-size: 20px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =====================================
+           CONTENT GRID
+        ===================================== */
+
+        .details-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .details-card {
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+        }
+
+
+        .details-card h2 {
+
+            margin-top: 0;
+
+            margin-bottom: 18px;
+
+            color: #c45cff;
+
+            font-size: 23px;
+
+        }
+
+
+        .details-card p {
+
+            color: #c9bddb;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+        }
+
+
+        .details-card ul {
+
+            color: #c9bddb;
+
+            line-height: 2;
+
+            padding-left: 22px;
+
+        }
+
+
+        /* =====================================
+           EVENT INFORMATION
+        ===================================== */
+
+        .event-info {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .info-item {
+
+            background:
+                rgba(
+                    196,
+                    92,
+                    255,
+                    0.08
+                );
+
+            border-radius: 10px;
+
+            padding: 16px;
+
+            color: #e8e0ef;
+
+            line-height: 1.6;
+
+        }
+
+
+        .info-item strong {
+
+            color: #c45cff;
+
+        }
+
+
+        /* =====================================
+           CTA
+        ===================================== */
+
+        .details-cta {
+
+            text-align: center;
+
+            margin-top: 45px;
+
+        }
+
+
+        .details-cta a {
+
+            display: inline-block;
+
+            padding: 15px 28px;
+
+            margin: 6px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+
+        }
+
+
+        .feedback-btn {
+
+            background: #b944f2;
+
+            color: white;
+
+        }
+
+
+        .feedback-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(196, 92, 255, 0.3);
+
+        }
+
+
+        .events-btn {
+
+            border:
+                1px solid
+                #c45cff;
+
+            color: #c45cff;
+
+        }
+
+
+        .events-btn:hover {
+
+            background:
+                rgba(
+                    196,
+                    92,
+                    255,
+                    0.1
+                );
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 750px) {
+
+            .details-page {
+
+                padding: 60px 18px;
+
+            }
+
+
+            .details-hero {
+
+                padding: 55px 20px;
+
+            }
+
+
+            .details-hero h1 {
+
+                font-size: 42px;
+
+            }
+
+
+            .details-hero p {
+
+                font-size: 17px;
+
+            }
+
+
+            .details-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .event-info {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <nav>
+
+        <div class="logo">
+            EventSphere
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a
+                href="events.html"
+                class="active"
+            >
+                Events
+            </a>
+
+
+            <a href="feedback.html">
+                Feedback
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="details-page">
+
+
+        <!-- BACK -->
+
+        <a
+            href="events.html"
+            class="back-link"
+        >
+            ← Back to Events
+        </a>
+
+
+
+        <!-- =================================
+             HERO
+        ================================== -->
+
+        <section class="details-hero">
+
+
+            <div class="details-icon">
+                💻
+            </div>
+
+
+            <div class="event-label">
+                TECHNICAL EVENT
+            </div>
+
+
+            <h1>
+                Code Sprint
+            </h1>
+
+
+            <p>
+                Solve challenging programming problems,
+                improve your coding skills and demonstrate
+                your problem-solving abilities under time
+                constraints.
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             DETAILS
+        ================================== -->
+
+        <section class="details-grid">
+
+
+            <!-- ABOUT -->
+
+            <div class="details-card">
+
+                <h2>
+                    About the Event
+                </h2>
+
+                <p>
+                    Code Sprint is a programming competition
+                    designed for participants who enjoy solving
+                    technical problems. Participants will work
+                    on coding challenges within a limited time
+                    and demonstrate their programming skills.
+                </p>
+
+            </div>
+
+
+
+            <!-- OBJECTIVE -->
+
+            <div class="details-card">
+
+                <h2>
+                    Objective
+                </h2>
+
+                <p>
+                    The objective of Code Sprint is to improve
+                    logical thinking, programming knowledge,
+                    algorithmic skills and the ability to solve
+                    problems efficiently.
+                </p>
+
+            </div>
+
+
+
+            <!-- EVENT INFORMATION -->
+
+            <div class="details-card">
+
+                <h2>
+                    Event Information
+                </h2>
+
+
+                <div class="event-info">
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Team Size
+                        </strong>
+
+                        <br>
+
+                        Individual
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Duration
+                        </strong>
+
+                        <br>
+
+                        1–2 Hours
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Mode
+                        </strong>
+
+                        <br>
+
+                        Online / On-site
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Level
+                        </strong>
+
+                        <br>
+
+                        Beginner to Advanced
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CHALLENGE FORMAT -->
+
+            <div class="details-card">
+
+                <h2>
+                    Challenge Format
+                </h2>
+
+                <ul>
+
+                    <li>
+                        Programming problems
+                    </li>
+
+                    <li>
+                        Algorithm challenges
+                    </li>
+
+                    <li>
+                        Logical reasoning problems
+                    </li>
+
+                    <li>
+                        Time-based coding rounds
+                    </li>
+
+                    <li>
+                        Multiple difficulty levels
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- TECHNOLOGIES -->
+
+            <div class="details-card">
+
+                <h2>
+                    Technologies
+                </h2>
+
+                <ul>
+
+                    <li>
+                        C / C++
+                    </li>
+
+                    <li>
+                        Java
+                    </li>
+
+                    <li>
+                        Python
+                    </li>
+
+                    <li>
+                        JavaScript
+                    </li>
+
+                    <li>
+                        Other supported languages
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- JUDGING -->
+
+            <div class="details-card">
+
+                <h2>
+                    Judging Criteria
+                </h2>
+
+                <ul>
+
+                    <li>
+                        Correctness of solution
+                    </li>
+
+                    <li>
+                        Number of problems solved
+                    </li>
+
+                    <li>
+                        Execution time
+                    </li>
+
+                    <li>
+                        Code quality
+                    </li>
+
+                    <li>
+                        Problem-solving approach
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- RULES -->
+
+            <div class="details-card">
+
+                <h2>
+                    Rules & Guidelines
+                </h2>
+
+                <ul>
+
+                    <li>
+                        Participants must follow the
+                        given time limit.
+                    </li>
+
+                    <li>
+                        All solutions must be submitted
+                        before the deadline.
+                    </li>
+
+                    <li>
+                        Unfair practices are prohibited.
+                    </li>
+
+                    <li>
+                        Participants must follow event
+                        instructions.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- LEARNING -->
+
+            <div class="details-card">
+
+                <h2>
+                    What You Will Learn
+                </h2>
+
+                <ul>
+
+                    <li>
+                        Problem solving
+                    </li>
+
+                    <li>
+                        Algorithm development
+                    </li>
+
+                    <li>
+                        Logical thinking
+                    </li>
+
+                    <li>
+                        Time management
+                    </li>
+
+                    <li>
+                        Programming efficiency
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- PRIZES -->
+
+            <div class="details-card">
+
+                <h2>
+                    Prizes & Recognition
+                </h2>
+
+                <p>
+                    Top-performing participants will receive
+                    recognition for their programming skills
+                    and problem-solving performance.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Winner recognition
+                    </li>
+
+                    <li>
+                        Certificates
+                    </li>
+
+                    <li>
+                        Performance recognition
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             CTA
+        ================================== -->
+
+        <div class="details-cta">
+
+
+            <a
+                href="feedback.html"
+                class="feedback-btn"
+            >
+                Give Code Sprint Feedback
+            </a>
+
+
+            <a
+                href="events.html"
+                class="events-btn"
+            >
+                Back to Events
+            </a>
+
+
+        </div>
+
+
+    </main>
+
+
+</body>
+
+</html>

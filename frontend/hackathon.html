@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EventSphere | Hackathon</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        /* =====================================
+           HACKATHON DETAILS PAGE
+        ===================================== */
+
+        .hackathon-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 70px 25px 100px;
+        }
+
+
+        /* HERO */
+
+        .hackathon-hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #241438,
+                    #130c20
+                );
+
+            border:
+                1px solid
+                rgba(196, 92, 255, 0.25);
+
+            border-radius: 18px;
+
+            padding: 65px 50px;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            margin-bottom: 45px;
+        }
+
+
+        .hackathon-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            background:
+                rgba(196, 92, 255, 0.12);
+
+            border-radius: 50%;
+
+            top: -150px;
+            right: -100px;
+
+            filter: blur(10px);
+        }
+
+
+        .hackathon-icon {
+            font-size: 65px;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .hackathon-hero .subtitle {
+            position: relative;
+            z-index: 2;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hackathon-hero h1 {
+            font-size: 52px;
+
+            font-weight: 500;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .hackathon-hero h1 span {
+            color: #c45cff;
+
+            text-shadow:
+                0 0 20px
+                rgba(196, 92, 255, 0.3);
+        }
+
+
+        .hackathon-hero p {
+            max-width: 750px;
+
+            margin: 0 auto;
+
+            color: #b9b1c5;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* BACK BUTTON */
+
+        .back-button {
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            color: #c45cff;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .back-button:hover {
+            color: #ffffff;
+
+            transform:
+                translateX(-4px);
+        }
+
+
+        /* DETAILS GRID */
+
+        .details-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-bottom: 40px;
+        }
+
+
+        .detail-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(35, 25, 52, 0.95),
+                    rgba(19, 13, 31, 0.95)
+                );
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+
+            border-radius: 12px;
+
+            padding: 30px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .detail-card:hover {
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(196, 92, 255, 0.35);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.3);
+        }
+
+
+        .detail-card h2 {
+            color: #ffffff;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .detail-card h2 span {
+            color: #c45cff;
+        }
+
+
+        .detail-card p {
+            color: #aaa2b8;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+        /* INFORMATION LIST */
+
+        .info-list {
+            list-style: none;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+
+        .info-list li {
+            color: #bdb5c8;
+
+            padding: 10px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.05);
+        }
+
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+
+        .info-list strong {
+            color: #ffffff;
+
+            margin-right: 8px;
+        }
+
+
+        /* RULES */
+
+        .rules-list {
+            padding-left: 20px;
+        }
+
+
+        .rules-list li {
+            color: #aaa2b8;
+
+            margin-bottom: 12px;
+
+            line-height: 1.7;
+        }
+
+
+        /* FULL WIDTH */
+
+        .full-card {
+            grid-column: 1 / -1;
+        }
+
+
+        /* CTA */
+
+        .hackathon-cta {
+            text-align: center;
+
+            margin-top: 50px;
+
+            padding: 45px 25px;
+
+            background:
+                rgba(196, 92, 255, 0.06);
+
+            border:
+                1px solid
+                rgba(196, 92, 255, 0.18);
+
+            border-radius: 14px;
+        }
+
+
+        .hackathon-cta h2 {
+            font-size: 30px;
+
+            font-weight: 400;
+
+            margin-bottom: 12px;
+        }
+
+
+        .hackathon-cta p {
+            color: #aaa2b8;
+
+            margin-bottom: 25px;
+        }
+
+
+        .cta-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .hackathon-page {
+                padding:
+                    45px
+                    20px
+                    70px;
+            }
+
+
+            .hackathon-hero {
+                padding:
+                    45px
+                    25px;
+            }
+
+
+            .hackathon-hero h1 {
+                font-size: 38px;
+            }
+
+
+            .hackathon-hero p {
+                font-size: 15px;
+            }
+
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .full-card {
+                grid-column: auto;
+            }
+
+
+            .detail-card {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <nav>
+
+        <div class="logo">
+            EventSphere
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="events.html"
+                class="active"
+            >
+                Events
+            </a>
+
+            <a href="feedback.html">
+                Feedback
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main>
+
+        <section class="hackathon-page">
+
+
+            <!-- BACK -->
+
+            <a
+                href="events.html"
+                class="back-button"
+            >
+                ← Back to Events
+            </a>
+
+
+
+            <!-- =================================
+                 HERO
+            ================================== -->
+
+            <div class="hackathon-hero">
+
+                <div class="hackathon-icon">
+                    🚀
+                </div>
+
+
+                <p class="subtitle">
+                    TECHNICAL EVENT
+                </p>
+
+
+                <h1>
+                    <span>Hackathon</span>
+                </h1>
+
+
+                <p>
+                    Collaborate, innovate and build
+                    real-world solutions with your team.
+                    Put your technical knowledge into
+                    practice and turn your ideas into
+                    working solutions.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 DETAILS
+            ================================== -->
+
+            <div class="details-grid">
+
+
+                <!-- ABOUT -->
+
+                <div class="detail-card full-card">
+
+                    <h2>
+                        <span>01.</span>
+                        About the Hackathon
+                    </h2>
+
+                    <p>
+                        The Hackathon is an intensive
+                        technical event where participants
+                        work individually or in teams to
+                        develop innovative solutions for
+                        real-world problems.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Participants are encouraged to
+                        identify a problem, design a
+                        solution, develop a working
+                        prototype and present their idea
+                        to the judging panel.
+                    </p>
+
+                </div>
+
+
+
+                <!-- OBJECTIVE -->
+
+                <div class="detail-card">
+
+                    <h2>
+                        <span>02.</span>
+                        Objective
+                    </h2>
+
+                    <p>
+                        The main objective is to encourage
+                        creativity, teamwork, problem-solving
+                        and practical application of
+                        programming and technology skills.
+                    </p>
+
+                </div>
+
+
+
+                <!-- EVENT INFORMATION -->
+
+                <div class="detail-card">
+
+                    <h2>
+                        <span>03.</span>
+                        Event Information
+                    </h2>
+
+
+                    <ul class="info-list">
+
+                        <li>
+                            <strong>👥 Team Size:</strong>
+                            2 – 4 Members
+                        </li>
+
+                        <li>
+                            <strong>⏱️ Duration:</strong>
+                            24 Hours
+                        </li>
+
+                        <li>
+                            <strong>💻 Mode:</strong>
+                            On-site
+                        </li>
+
+                        <li>
+                            <strong>🎯 Level:</strong>
+                            Beginner to Advanced
+                        </li>
+
+                        <li>
+                            <strong>🏆 Category:</strong>
+                            Innovation & Technology
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- TECHNOLOGIES -->
+
+                <div class="detail-card">
+
+                    <h2>
+                        <span>04.</span>
+                        Technologies
+                    </h2>
+
+                    <p>
+                        Participants can choose suitable
+                        technologies based on their project
+                        requirements.
+                    </p>
+
+                    <br>
+
+                    <ul class="info-list">
+
+                        <li>
+                            <strong>Frontend:</strong>
+                            HTML, CSS, JavaScript
+                        </li>
+
+                        <li>
+                            <strong>Backend:</strong>
+                            Node.js / Python
+                        </li>
+
+                        <li>
+                            <strong>Database:</strong>
+                            MongoDB / MySQL
+                        </li>
+
+                        <li>
+                            <strong>Other:</strong>
+                            AI, Cloud, APIs
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- JUDGING -->
+
+                <div class="detail-card">
+
+                    <h2>
+                        <span>05.</span>
+                        Judging Criteria
+                    </h2>
+
+
+                    <ul class="rules-list">
+
+                        <li>
+                            Innovation and originality
+                        </li>
+
+                        <li>
+                            Technical implementation
+                        </li>
+
+                        <li>
+                            Problem-solving approach
+                        </li>
+
+                        <li>
+                            User experience and design
+                        </li>
+
+                        <li>
+                            Project presentation
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- RULES -->
+
+                <div class="detail-card full-card">
+
+                    <h2>
+                        <span>06.</span>
+                        Rules & Guidelines
+                    </h2>
+
+
+                    <ol class="rules-list">
+
+                        <li>
+                            Participants must register
+                            before the event begins.
+                        </li>
+
+                        <li>
+                            Teams should consist of
+                            2 to 4 members.
+                        </li>
+
+                        <li>
+                            Projects must be developed
+                            during the hackathon.
+                        </li>
+
+                        <li>
+                            Participants should explain
+                            their project clearly during
+                            the final presentation.
+                        </li>
+
+                        <li>
+                            All team members should
+                            contribute to the project.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+
+
+                <!-- PRIZES -->
+
+                <div class="detail-card">
+
+                    <h2>
+                        <span>07.</span>
+                        Prizes & Recognition
+                    </h2>
+
+                    <p>
+                        The best-performing teams will
+                        receive recognition based on
+                        innovation, implementation and
+                        presentation quality.
+                    </p>
+
+                    <br>
+
+                    <ul class="info-list">
+
+                        <li>
+                            🥇 First Prize
+                        </li>
+
+                        <li>
+                            🥈 Second Prize
+                        </li>
+
+                        <li>
+                            🥉 Third Prize
+                        </li>
+
+                            <li>
+                            📜 Participation Certificate
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- WHAT YOU LEARN -->
+
+                <div class="detail-card">
+
+                    <h2>
+                        <span>08.</span>
+                        What You Will Learn
+                    </h2>
+
+
+                    <ul class="rules-list">
+
+                        <li>
+                            Team collaboration
+                        </li>
+
+                        <li>
+                            Real-world problem solving
+                        </li>
+
+                        <li>
+                            Project development
+                        </li>
+
+                        <li>
+                            Presentation skills
+                        </li>
+
+                        <li>
+                            Innovation and creativity
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 CTA
+            ================================== -->
+
+            <div class="hackathon-cta">
+
+                <h2>
+                    Ready to share your experience?
+                </h2>
+
+
+                <p>
+                    Tell us what you think about the
+                    Hackathon event.
+                </p>
+
+
+                <div class="cta-buttons">
+
+                    <a
+                        href="feedback.html"
+                        class="btn"
+                    >
+                        Give Hackathon Feedback
+                    </a>
+
+
+                    <a
+                        href="events.html"
+                        class="btn secondary-btn"
+                    >
+                        ← Back to Events
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>
