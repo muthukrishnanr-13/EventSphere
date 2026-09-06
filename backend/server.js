@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const dns = require("dns");
+const path = require("path");
 
 const Feedback = require("./models/Feedback");
 
@@ -15,6 +16,10 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+
+// Serve Frontend
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 
 // MongoDB Connection
@@ -31,7 +36,7 @@ mongoose
 
 // Home Route
 app.get("/", (req, res) => {
-    res.send("Event Feedback Management System Backend is running!");
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
 
